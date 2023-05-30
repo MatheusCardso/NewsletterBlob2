@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15A9381D-D7D2-45E1-91B1-E997669673CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NewsletterBlob</RootNamespace>
+    <AssemblyName>NewsletterBlob</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.2.5\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\WeatherInfo.cs" />
+    <Compile Include="API\WeatherService.cs" />
+    <Compile Include="Controller\ControllerAutor.cs" />
+    <Compile Include="Controller\ControllerCategoria.cs" />
+    <Compile Include="Controller\ControllerComentario.cs" />
+    <Compile Include="Controller\ControllerCurtida.cs" />
+    <Compile Include="Controller\ControllerLeitor.cs" />
+    <Compile Include="Controller\ControllerNoticias.cs" />
+    <Compile Include="DTO\Autor.cs" />
+    <Compile Include="Model\AutorDAO.cs" />
+    <Compile Include="DTO\Categoria.cs" />
+    <Compile Include="Model\CategoriaDAO.cs" />
+    <Compile Include="DTO\Comentario.cs" />
+    <Compile Include="Model\ComentarioDAO.cs" />
+    <Compile Include="DTO\Curtida.cs" />
+    <Compile Include="Model\CurtidaDAO.cs" />
+    <Compile Include="DTO\Leitor.cs" />
+    <Compile Include="Model\LeitorDAO.cs" />
+    <Compile Include="DTO\Noticia.cs" />
+    <Compile Include="Model\NoticiaDAO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ByteToImage.cs" />
+    <Compile Include="View\JanelaEditarNoticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaEditarNoticias.Designer.cs">
+      <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaCadastrarNoticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaCadastrarNoticias.Designer.cs">
+      <DependentUpon>JanelaCadastrarNoticias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaCadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaCadastrarUsuario.Designer.cs">
+      <DependentUpon>JanelaCadastrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaContaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaContaUsuario.Designer.cs">
+      <DependentUpon>JanelaContaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaLoginAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaLoginAutor.Designer.cs">
+      <DependentUpon>JanelaLoginAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaLoginLeitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaLoginLeitor.Designer.cs">
+      <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaNoticiaExpandida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaNoticiaExpandida.Designer.cs">
+      <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.Designer.cs">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.Designer.cs">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaPrincipal.Designer.cs">
+      <DependentUpon>JanelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaEditarNoticias.resx">
+      <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaCadastrarNoticias.resx">
+      <DependentUpon>JanelaCadastrarNoticias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaCadastrarUsuario.resx">
+      <DependentUpon>JanelaCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaContaUsuario.resx">
+      <DependentUpon>JanelaContaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaLoginAutor.resx">
+      <DependentUpon>JanelaLoginAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaLoginLeitor.resx">
+      <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaNoticiaExpandida.resx">
+      <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaNoticiasAutor.resx">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaOpcoesAutor.resx">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaPrincipal.resx">
+      <DependentUpon>JanelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_newspaper_re_syf5 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png news.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %287%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
