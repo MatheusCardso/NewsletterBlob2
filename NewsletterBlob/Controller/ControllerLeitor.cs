@@ -52,58 +52,13 @@ namespace NewsletterBlob.Controller
             }
         }
 
-        //Verificar Email
-        public bool verificaEmail(string email)
-        {
-            try
-            {
-                int result = new LeitorDAO().validaEmail(email);
-
-                if (result == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
-        //Verificar Cpf
-        public bool verificaCpf(string cpf)
-        {
-            try
-            {
-                int result = new LeitorDAO().validaCpf(cpf);
-
-                if (result == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
         //Ler Usuário Leitor
         public Leitor exibirLeitor(string email)
         {
             try
             {
                 Leitor leitor = new LeitorDAO().listarLeitor(email);
+                MessageBox.Show("Dados Carregados com Sucesso!", "Mensagem de SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return leitor;
             }
             catch (Exception ex)
@@ -112,7 +67,6 @@ namespace NewsletterBlob.Controller
                 return null;
             }
         }
-
 
         //Editar Usuário Leitor
         public void editarLeitor(string old_email, string nome, string email, DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
@@ -137,6 +91,7 @@ namespace NewsletterBlob.Controller
                 if (imagem != null)
                 {
                     new LeitorDAO().adicionarFotoPerfil(email, imagem);
+                    MessageBox.Show("Foto Inserida com Sucesso!", "Mensagem de SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

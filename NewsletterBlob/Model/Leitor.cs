@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NewsletterBlob.Model
 {
@@ -19,8 +18,6 @@ namespace NewsletterBlob.Model
         private string senha;
         private DateTime dataDeNascimento;
         private byte[] imagemPerfil;
-        private string caminhoFoto;
-        public string cFoto;
 
         //Construtor
         public Leitor(string nome, string email, DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
@@ -43,19 +40,6 @@ namespace NewsletterBlob.Model
             this.senha = senha;
             this.dataDeNascimento = dataDeNascimento;
             this.imagemPerfil = imagemPerfil;
-        }
-
-        public Leitor(string nome, string email, string cpf, string endereco, string telefone, string senha, DateTime dataDeNascimento, byte[] imagemPerfil, string caminhoFoto)
-        {
-            this.nome = nome;
-            this.email = email;
-            this.cpf = cpf;
-            this.endereco = endereco;
-            this.telefone = telefone;
-            this.senha = senha;
-            this.dataDeNascimento = dataDeNascimento;
-            this.imagemPerfil = imagemPerfil;
-            this.caminhoFoto = caminhoFoto;
         }
         public Leitor()
         {
@@ -104,13 +88,7 @@ namespace NewsletterBlob.Model
             set { imagemPerfil = value; }
         }
 
-        public string CaminhoFoto
-        {
-            get { return caminhoFoto; }
-            set { caminhoFoto = value; }
-        }
 
-        
         //Methods
         public void comentar()
         {
@@ -124,18 +102,6 @@ namespace NewsletterBlob.Model
 
         public void excluirComentarios()
         {
-
-        }
-        public void DefinirCaminhoFoto(string caminho)
-        {
-            CaminhoFoto=caminho;
-            cFoto = caminho;
-            MessageBox.Show("Caminho foto1: " + CaminhoFoto);
-        }
-        public string GetCaminhoFoto()
-        {
-            MessageBox.Show("Caminho foto2: " + cFoto);
-            return cFoto;
 
         }
     }
