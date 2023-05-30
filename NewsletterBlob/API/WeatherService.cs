@@ -5,12 +5,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Newtonsoft.Json.Linq;
+//using Newtonsoft.Json.Linq;
 
 namespace NewsletterBlob.API
 {
     internal class WeatherService
     {
+        /*
         private string apiKey = "31d31cf1cc5fa36eea92ecb1c69be7b7";
         private string apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
@@ -31,5 +32,6 @@ namespace NewsletterBlob.API
 
             return info;
         }
+        */
     }
 }
